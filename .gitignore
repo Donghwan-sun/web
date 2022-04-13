@@ -160,4 +160,4 @@ cython_debug/
 .venv/
 .js/g
 .closer_tes.py/
-.gitgnore
+.gitignore
