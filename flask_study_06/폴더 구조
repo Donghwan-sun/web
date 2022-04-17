@@ -1,0 +1,18 @@
+├── 폴더 구조.text
+├── blog_abtest.py
+├── blog_control
+│   ├── session_mgmt.py
+│   └── user_mgmt.py
+├── blog_view
+│   └── blog.py
+├── db_model
+│   ├── mongodb.py
+│   └── mysql.py
+├── schema.sql
+├── static
+│   ├── blog.css
+│   ├── brand
+│   └── dist
+└── templates
+    ├── blog_A.html
+    └── blog_B.html
