@@ -15,10 +15,11 @@ class BlogSession():
                             "user_email": user_email,
                             "webpage_name": webpage_name,
                             "access_time": now_time})
+
     @staticmethod
-    def get_blog_page(force=None):
-        print(force)
-        if force == None:
+    def get_blog_page(blog_id=None):
+        print(blog_id)
+        if blog_id == None:
             if BlogSession.session_count == 0:
                 BlogSession.session_count = 1
                 return 'blog_A.html'
@@ -27,5 +28,5 @@ class BlogSession():
                 return 'blog_B.html'
 
         else:
-            return BlogSession.blog_page[force]
+            return BlogSession.blog_page[blog_id]
 

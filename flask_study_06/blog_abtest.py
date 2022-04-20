@@ -5,6 +5,7 @@ from flask_cors import CORS
 from blog_view import blog
 from blog_control.user_mgmt import User
 import os
+
 # https를 쓰지 않을 경우, 보안 이슈로 에러가남 (다음 설정을 통해 http에서도 에러가 나지 않도록함)
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
@@ -12,7 +13,8 @@ app = Flask(__name__, static_url_path="/static")
 app.secret_key = "dhsun" # 서버를 띄울때마다 특별한 코드로 변경 할 수있도록 랜덤설정 장점으로 보안성이 좋을 수 있음
 CORS(app)
 
-app.register_blueprint()
+app.register_blueprint(blog.blog_abtest, url_prefix='/blog')
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.session_protection = "strong" # strong으로 설정하면 보안성이 조금더 강화됨

@@ -33,6 +33,7 @@ class User(UserMixin):
         sql = "SELECT * FROM user_info WHERE USER_EMAIL = '" + str(user_email) + "'"
         db_cursor.execute(sql)
         user = db_cursor.fetchone()
+
         if not user:
             db_cursor.close()
             return None
@@ -40,6 +41,7 @@ class User(UserMixin):
         print(user)
         user = User(user_id=user[0], user_email=user[1], blog_id=user[2])
         db_cursor.close()
+
         return user
 
     @staticmethod
@@ -48,7 +50,7 @@ class User(UserMixin):
         if not user:
             mysql_db = conn_mysqldb()
             db_cursor = mysql_db.cursor()
-            sql = "INSERT INTO user_info (USER_EMAIL, BLOG_ID) VALUES ('%s', '%s') % (str(user_email), str(blog_id))"
+            sql = "INSERT INTO user_info (USER_EMAIL, BLOG_ID) VALUES ('%s', '%s')" % (str(user_email), str(blog_id))
             db_cursor.execute(sql)
             mysql_db.commit()
             return User.find(user_email)
