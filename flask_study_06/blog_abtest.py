@@ -10,7 +10,7 @@ import os
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 app = Flask(__name__, static_url_path="/static")
-app.secret_key = "dhsun" # 서버를 띄울때마다 특별한 코드로 변경 할 수있도록 랜덤설정 장점으로 보안성이 좋을 수 있음
+app.secret_key = "dhsun2" # 서버를 띄울때마다 특별한 코드로 변경 할 수있도록 랜덤설정 장점으로 보안성이 좋을 수 있음
 CORS(app)
 
 app.register_blueprint(blog.blog_abtest, url_prefix='/blog')
