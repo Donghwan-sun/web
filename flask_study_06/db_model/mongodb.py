@@ -1,6 +1,6 @@
 import pymongo
 
-MONGO_HOST = 'localhost'
+MONGO_HOST = 'localhost:27017'
 MONGO_CONN = pymongo.MongoClient('mongodb://%s' % (MONGO_HOST))
 
 def conn_mongodb():

@@ -168,3 +168,5 @@ flask_study_02/
 flask_study_03/
 flask_study_04/
 flask_study_05/
+flask_study_06/db_model/mongodb.py
+flask_study_06/db_model/mysql.py

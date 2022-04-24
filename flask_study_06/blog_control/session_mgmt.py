@@ -18,14 +18,13 @@ class BlogSession():
 
     @staticmethod
     def get_blog_page(blog_id=None):
-        print(blog_id)
         if blog_id == None:
             if BlogSession.session_count == 0:
                 BlogSession.session_count = 1
-                return 'blog_A.html'
+                return BlogSession.blog_page['A']
             else:
                 BlogSession.session_count = 0
-                return 'blog_B.html'
+                return BlogSession.blog_page['B']
 
         else:
             return BlogSession.blog_page[blog_id]
