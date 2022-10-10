@@ -12,6 +12,7 @@
     <option name="namespacePackageFolders">
       <list>
         <option value="$MODULE_DIR$/app" />
+        <option value="$MODULE_DIR$/alembic" />
       </list>
     </option>
   </component>
