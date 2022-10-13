@@ -38,7 +38,7 @@ async def create_user(payload: schemas.CreateUserSchema, db: Session = Depends(g
     return new_user
 
 @router.post("/login")
-def login(payload:schemas.LoginUserSchema, response: Response, db: Session = Depends(get_db), Authorize: AuthJWT = Depends()):
+def login(payload: schemas.LoginUserSchema, response: Response, db: Session = Depends(get_db), Authorize: AuthJWT = Depends()):
     user = db.query(models.User).filter(
         models.User.email == EmailStr(payload.email.lower())).first()
     if not user:
