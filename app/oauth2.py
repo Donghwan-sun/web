@@ -29,9 +29,9 @@ def get_cofig():
 class NotVerified(Exception):
     pass
 
-
 class UserNotFound(Exception):
     pass
+
 def require_user(db: Session = Depends(get_db), Authorize: AuthJWT = Depends()):
     try:
         Authorize.jwt_required()
