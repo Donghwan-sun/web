@@ -17,7 +17,6 @@ REFRESH_TOKEN_EXPIRES_IN = settings.REFRESH_TOKEN_EXPIRES_IN
 async def create_user(payload: schemas.CreateUserSchema, db: Session = Depends(get_db)):
     user = db.query(models.User).filter(
         models.User.email == EmailStr(payload.email.lower())).first()
-
     if user:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT,
                             detail="Account already exist")
@@ -33,7 +32,7 @@ async def create_user(payload: schemas.CreateUserSchema, db: Session = Depends(g
     new_user = models.User(**payload.dict())
     db.add(new_user)
     db.commit()
-    db.refresh()
+    db.refresh(new_user)
 
     return new_user
 

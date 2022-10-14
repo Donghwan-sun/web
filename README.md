@@ -31,4 +31,10 @@
      JWT_PUBLIC_KEY=
     ```
   - terminal docker-compose up
+  - postgresql 도커 컨테이너 접속 docker exec -it postgres bash
+  - postgresql 데이터베이스 접속 psql -U "user_id" "database name"
+  - uuid 익스텐션 검색 select * from pg_available_extensions;
+  - uuid extension 추가 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+  - alembic init alembic
+  - 
   - python3 main.py
